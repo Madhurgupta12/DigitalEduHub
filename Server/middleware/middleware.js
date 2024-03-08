@@ -1,4 +1,4 @@
-const jwt=require('jwt')
+const jwt=require('jsonwebtoken')
 const User=require("../model/userModel");
 export const Control=(req,res,next)=>{
 
