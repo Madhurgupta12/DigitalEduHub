@@ -1,11 +1,11 @@
 const jwt=require('jsonwebtoken')
 const User=require("../model/userModel");
-export const Control=(req,res,next)=>{
+ const Control=(req,res,next)=>{
 
     try{
-        const {authorization}=req.headers;
+        const { authorization } =req.headers;
         //authorization =Bearer efunridvlignr
-        if(!authorization){
+        if(! authorization ){
            return res.status(401).send({error:"you must be logged in"});
         }
        const token= authorization.replace("Bearer ","");
@@ -34,3 +34,4 @@ catch(err){
     return res.status(500).send({message:"Auth1 failed",success:err})
 }
 }
+module.exports=Control
